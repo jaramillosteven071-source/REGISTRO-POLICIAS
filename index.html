@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Registro de Servidores Policiales</title>
+
+
+  <!-- =====================================================
+       INFORMACIÓN GENERAL
+  ====================================================== -->
+
+  <meta
+    name="description"
+    content="Acceso al sistema de Registro de Servidores Policiales."
+  >
+
+  <link
+    rel="canonical"
+    href="https://jaramillosteven071-source.github.io/REGISTRO-POLICIAS/"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="LOGO.PNG"
+  >
+
+
+  <!-- =====================================================
+       OPEN GRAPH
+       VISTA PREVIA EN WHATSAPP / FACEBOOK / TELEGRAM
+  ====================================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Registro de Servidores Policiales"
+  >
+
+  <meta
+    property="og:description"
+    content="Accede al sistema de Registro de Servidores Policiales."
+  >
+
+  <meta
+    property="og:url"
+    content="https://jaramillosteven071-source.github.io/REGISTRO-POLICIAS/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://jaramillosteven071-source.github.io/REGISTRO-POLICIAS/LOGO.PNG"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://jaramillosteven071-source.github.io/REGISTRO-POLICIAS/LOGO.PNG"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/png"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Registro de Servidores Policiales"
+  >
+
+
+  <!-- =====================================================
+       X / TWITTER
+  ====================================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Registro de Servidores Policiales"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Accede al sistema de Registro de Servidores Policiales."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://jaramillosteven071-source.github.io/REGISTRO-POLICIAS/LOGO.PNG"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       CONFIGURACIÓN GENERAL
+    ====================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 20px;
+
+      position: relative;
+
+      overflow-x: hidden;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: white;
+
+      background: #07182a;
+
+    }
+
+
+    /* =====================================================
+       FONDO
+    ====================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      background-image:
+        url("LOGO.PNG");
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-repeat: no-repeat;
+
+      filter:
+        blur(8px)
+        brightness(.25);
+
+      transform:
+        scale(1.10);
+
+      z-index: -2;
+
+    }
+
+
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          rgba(0,145,255,.12),
+          rgba(0,0,0,.70)
+        ),
+
+        linear-gradient(
+          135deg,
+          rgba(0,14,31,.70),
+          rgba(0,38,69,.80)
+        );
+
+      z-index: -1;
+
+    }
+
+
+    /* =====================================================
+       TARJETA PRINCIPAL
+    ====================================================== */
+
+    .contenedor {
+
+      width:
+        min(
+          92vw,
+          470px
+        );
+
+      padding:
+        40px
+        30px;
+
+      text-align: center;
+
+      border-radius: 28px;
+
+      background:
+        rgba(4,18,35,.80);
+
+      border:
+        1px solid
+        rgba(255,255,255,.20);
+
+      backdrop-filter:
+        blur(17px);
+
+      -webkit-backdrop-filter:
+        blur(17px);
+
+      box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.58),
+
+        0 0 40px
+        rgba(0,157,255,.10);
+
+    }
+
+
+    /* =====================================================
+       LOGO
+    ====================================================== */
+
+    .logo {
+
+      width: 190px;
+
+      height: 190px;
+
+      margin:
+        0 auto
+        25px;
+
+      padding: 7px;
+
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.24);
+
+      box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.50),
+
+        0 0 30px
+        rgba(32,168,255,.16);
+
+    }
+
+
+    .logo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 22px;
+
+    }
+
+
+    /* =====================================================
+       TEXTOS
+    ====================================================== */
+
+    h1 {
+
+      margin-bottom: 14px;
+
+      font-size:
+        clamp(
+          25px,
+          7vw,
+          35px
+        );
+
+      line-height: 1.15;
+
+      font-weight: 900;
+
+    }
+
+
+    .descripcion {
+
+      margin-bottom: 24px;
+
+      color:
+        rgba(255,255,255,.70);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN DE UBICACIÓN
+    ====================================================== */
+
+    .ubicacion {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 23px;
+
+      padding:
+        14px
+        15px;
+
+      text-align: left;
+
+      border-radius: 14px;
+
+      border:
+        1px solid
+        rgba(61,178,255,.18);
+
+      background:
+        rgba(0,142,255,.08);
+
+    }
+
+
+    .ubicacion-icono {
+
+      flex-shrink: 0;
+
+      width: 42px;
+
+      height: 42px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        rgba(30,158,255,.12);
+
+      font-size: 22px;
+
+    }
+
+
+    .ubicacion-texto {
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+      color:
+        rgba(255,255,255,.68);
+
+    }
+
+
+    /* =====================================================
+       BOTÓN
+    ====================================================== */
+
+    .boton {
+
+      width: 100%;
+
+      height: 58px;
+
+      border: none;
+
+      border-radius: 15px;
+
+      cursor: pointer;
+
+      color: white;
+
+      font-size: 15px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.3px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #1677ff,
+          #00c7ff
+        );
+
+      box-shadow:
+
+        0 10px 30px
+        rgba(0,132,255,.34);
+
+      transition:
+        transform .2s,
+        filter .2s,
+        box-shadow .2s;
+
+    }
+
+
+    .boton:hover {
+
+      transform:
+        translateY(-2px);
+
+      filter:
+        brightness(1.10);
+
+      box-shadow:
+
+        0 14px 35px
+        rgba(0,132,255,.40);
+
+    }
+
+
+    .boton:disabled {
+
+      opacity: .65;
+
+      cursor: default;
+
+      transform: none;
+
+    }
+
+
+    /* =====================================================
+       ESTADO
+    ====================================================== */
+
+    .estado {
+
+      min-height: 22px;
+
+      margin-top: 18px;
+
+      font-size: 12px;
+
+      line-height: 1.45;
+
+      color:
+        rgba(255,255,255,.68);
+
+    }
+
+
+    .estado.ok {
+
+      color: #64f3ad;
+
+    }
+
+
+    .estado.error {
+
+      color: #ff8585;
+
+    }
+
+
+    /* =====================================================
+       CARGANDO
+    ====================================================== */
+
+    .loader {
+
+      width: 17px;
+
+      height: 17px;
+
+      display: inline-block;
+
+      margin-right: 8px;
+
+      vertical-align: middle;
+
+      border:
+        2px solid
+        rgba(255,255,255,.30);
+
+      border-top-color: white;
+
+      border-radius: 50%;
+
+      animation:
+        girar
+        .7s
+        linear
+        infinite;
+
+    }
+
+
+    @keyframes girar {
+
+      to {
+        transform:
+          rotate(360deg);
+      }
+
+    }
+
+
+    /* =====================================================
+       CELULAR
+    ====================================================== */
+
+    @media(max-width: 500px) {
+
+      body {
+
+        padding: 16px;
+
+      }
+
+
+      .contenedor {
+
+        width: 94%;
+
+        padding:
+          30px
+          20px;
+
+      }
+
+
+      .logo {
+
+        width: 150px;
+
+        height: 150px;
+
+      }
+
+
+      h1 {
+
+        font-size: 24px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="contenedor">
+
+
+    <!-- =====================================================
+         LOGO
+    ====================================================== -->
+
+    <div class="logo">
+
+      <img
+        src="LOGO.PNG"
+        alt="Registro de Servidores Policiales"
+      >
+
+    </div>
+
+
+    <!-- =====================================================
+         TÍTULO
+    ====================================================== -->
+
+    <h1>
+      Registro de Servidores Policiales
+    </h1>
+
+
+    <p class="descripcion">
+
+      Presiona continuar para acceder
+      al sistema de registro.
+
+    </p>
+
+
+    <!-- =====================================================
+         UBICACIÓN
+    ====================================================== -->
+
+    <div class="ubicacion">
+
+      <div class="ubicacion-icono">
+        📍
+      </div>
+
+
+      <div class="ubicacion-texto">
+
+        Esta aplicación utiliza servicios de ubicación.
+        El navegador solicitará tu autorización antes de
+        acceder a ella.
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTÓN
+    ====================================================== -->
+
+    <button
+
+      type="button"
+
+      id="btnContinuar"
+
+      class="boton"
+
+      onclick="continuar()"
+
+    >
+
+      CONTINUAR
+
+    </button>
+
+
+    <!-- =====================================================
+         MENSAJE
+    ====================================================== -->
+
+    <div
+
+      id="estado"
+
+      class="estado"
+
+    ></div>
+
+
+  </main>
+
+
+  <script>
+
+    /* =====================================================
+       URL DE GOOGLE APPS SCRIPT
+    ====================================================== */
+
+    const URL_DESTINO =
+      'https://script.google.com/macros/s/AKfycbzTEeBPIAV54qMzHk_ulSeMQFUl8DyK9EX11eBUSCTHLH6YHqebhu-31vHxSr1KBmd9YA/exec';
+
+
+    /* =====================================================
+       BOTÓN CONTINUAR
+    ====================================================== */
+
+    function continuar() {
+
+
+      const boton =
+        document.getElementById(
+          'btnContinuar'
+        );
+
+
+      const estado =
+        document.getElementById(
+          'estado'
+        );
+
+
+      boton.disabled =
+        true;
+
+
+      boton.innerHTML =
+        '<span class="loader"></span> COMPROBANDO...';
+
+
+      estado.className =
+        'estado';
+
+
+      estado.textContent =
+        'Solicitando permiso de ubicación...';
+
+
+      /* ===================================================
+         COMPROBAR GEOLOCALIZACIÓN
+      =================================================== */
+
+      if (
+        !navigator.geolocation
+      ) {
+
+        estado.className =
+          'estado error';
+
+
+        estado.textContent =
+          'Este navegador no dispone de servicios de ubicación.';
+
+
+        restaurarBoton();
+
+
+        return;
+
+      }
+
+
+      /* ===================================================
+         PEDIR PERMISO AL USUARIO
+      =================================================== */
+
+      navigator.geolocation.getCurrentPosition(
+
+
+        /* PERMISO CONCEDIDO */
+
+        function(posicion) {
+
+
+          /*
+            En esta página únicamente comprobamos
+            que el navegador autorizó la ubicación.
+
+            No almacenamos las coordenadas.
+          */
+
+
+          estado.className =
+            'estado ok';
+
+
+          estado.textContent =
+            '✓ Ubicación autorizada. Abriendo sistema...';
+
+
+          boton.innerHTML =
+            '✓ ABRIENDO...';
+
+
+          setTimeout(
+
+            function() {
+
+              window.location.href =
+                URL_DESTINO;
+
+            },
+
+            700
+
+          );
+
+        },
+
+
+        /* PERMISO DENEGADO O ERROR */
+
+        function(error) {
+
+
+          boton.disabled =
+            false;
+
+
+          boton.textContent =
+            'CONTINUAR';
+
+
+          estado.className =
+            'estado error';
+
+
+          if (
+            error.code ===
+            error.PERMISSION_DENIED
+          ) {
+
+            estado.textContent =
+              'El permiso de ubicación no fue concedido. Puedes volver a intentarlo.';
+
+          }
+
+          else if (
+            error.code ===
+            error.POSITION_UNAVAILABLE
+          ) {
+
+            estado.textContent =
+              'No se pudo determinar la ubicación del dispositivo.';
+
+          }
+
+          else if (
+            error.code ===
+            error.TIMEOUT
+          ) {
+
+            estado.textContent =
+              'La solicitud de ubicación tardó demasiado. Intenta nuevamente.';
+
+          }
+
+          else {
+
+            estado.textContent =
+              'No fue posible comprobar la ubicación.';
+
+          }
+
+        },
+
+
+        /* CONFIGURACIÓN */
+
+        {
+
+          enableHighAccuracy:
+            true,
+
+          timeout:
+            15000,
+
+          maximumAge:
+            0
+
+        }
+
+
+      );
+
+    }
+
+
+    /* =====================================================
+       RESTAURAR BOTÓN
+    ====================================================== */
+
+    function restaurarBoton() {
+
+
+      const boton =
+        document.getElementById(
+          'btnContinuar'
+        );
+
+
+      boton.disabled =
+        false;
+
+
+      boton.textContent =
+        'CONTINUAR';
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
